@@ -14,9 +14,6 @@ public class Result {
                 if (grades.get(entry) >= 38 && grades.get(entry) <= 100) {
                     System.out.println("Current entry: " + grades.get(entry));
                     int tmp = grades.get(entry) % 10;
-                    if (tmp % 5 == 0) {
-                        break;
-                    }
                     current = (int) Math.floor(grades.get(entry) / 10);
                     if (tmp > 2 && tmp < 5) {
                         current = current * 10 + 5;
