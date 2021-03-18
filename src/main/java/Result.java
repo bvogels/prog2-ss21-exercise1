@@ -18,7 +18,7 @@ public class Result {
 
             /* This for-loop is run 'entry' times, starting with index 1 */
             ArrayList<Integer> rounded = new ArrayList<>(grades);
-            rounded.remove(0);
+            rounded.remove(0);  // The first entry is removed; this is the number of students
             for (int entry = 0; entry < rounded.size(); entry++) {
 
                 /* If the entry is 38 or more and less or equal 100, its elegibility
