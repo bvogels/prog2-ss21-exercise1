@@ -74,13 +74,21 @@ public class ResultTest {
         assertTrue(Arrays.equals(z.toArray(), Result.gradingStudents(z).toArray()), "Empty list");
     }
 
-    @DisplayName("test")
+    @DisplayName("Check for coherent data: grades < 0 or > 100")
     @Test
     void testCheckResultForValidity8() {
+        List<Integer> z = new ArrayList<>(Arrays.asList(3, -1, 50, 101));
+        List<Integer> expected = new ArrayList<>(Arrays.asList(3, -1, 50, 101));
+        assertTrue(Arrays.equals(expected.toArray(), Result.gradingStudents(z).toArray()), "Invalid data");
+    }
+
+    @DisplayName("test")
+    @Test
+    void testCheckResultForValidity9() {
         List<Integer> z = new ArrayList<>(Arrays.asList(3, 51, 52, 53, 54, 55));
         ArrayList<Integer> rounded = new ArrayList<>(z);
         assertEquals(z, rounded);
-        assertFalse(z == rounded);
+        assertNotSame(z, rounded);
     }
 
 

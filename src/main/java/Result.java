@@ -20,6 +20,9 @@ public class Result {
             ArrayList<Integer> rounded = new ArrayList<>(grades);
             rounded.remove(0);  // The first entry is removed; this is the number of students
             for (int entry = 0; entry < rounded.size(); entry++) {
+                if (rounded.get(entry) < 0 || rounded.get(entry) > 100) {
+                    return grades;
+                }
 
                 /* If the entry is 38 or more and less or equal 100, its elegibility
                 for rounding is checked. */
